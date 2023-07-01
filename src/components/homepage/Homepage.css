@@ -1,0 +1,14 @@
+.homepage {
+  display: flex;
+  padding-top: 100px;
+  justify-content: space-around;
+  align-items: center;
+}
+.homepage-card-1 {
+  align-items: center;
+}
+
+.homepage-faq {
+  padding: "10px";
+  margin: "10px";
+}

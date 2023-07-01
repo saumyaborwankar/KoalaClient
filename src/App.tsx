@@ -20,7 +20,7 @@ function App() {
       {/* <Route path="/aboutme" element={<AboutMe />} /> */}
       {/* <Route path="/disclaimer" element={<Disclaimer />} /> */}
       {/* </Routes> */}
-      <Footer />
+      <Homepage />
       {/* </Routes> */}
     </div>
   );
