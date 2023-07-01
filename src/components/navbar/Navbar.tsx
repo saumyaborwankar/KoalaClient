@@ -11,7 +11,7 @@ import {
 const Navbar: React.FC = () => {
   const [openMenu, setOpenMenu] = useState(false);
   return (
-    <div>
+    <div className="navbar">
       <div style={{}} className="menuIcon">
         <MenuOutlined
           style={{ padding: "8px", fontSize: 24, alignItems: "center" }}
@@ -40,31 +40,27 @@ const Navbar: React.FC = () => {
 
 const NavbarMenu = ({ isInline = false }) => {
   return (
-    // <Menu
-    //   style={{ fontSize: 24 }}
-    //   mode={isInline ? "inline" : "horizontal"}
-    //   items={[
-    //     {
-    //       label: "Home",
-    //       key: "home",
-    //     },
-    //     {
-    //       label: " About",
-    //       key: "about",
-    //     },
-    //     {
-    //       label: "Login",
-    //       key: "login",
-    //     },
-    //   ]}
-    // ></Menu>
-    <div style={{ padding: "8px", margin: "10px" }}>
-      <Space direction={isInline ? "vertical" : "horizonal"}>
+    <div>
+      <Space
+        direction={isInline ? "vertical" : "horizonal"}
+        className="space-container-3"
+      >
         <Space>
-          <Button type="primary">Primary</Button>
+          <Button type="primary" size="large">
+            Koala
+          </Button>
         </Space>
-        <Space>
-          <Button>Default</Button>
+
+        <Space
+          direction={isInline ? "vertical" : "horizonal"}
+          className="space-container-2"
+        >
+          <Space>
+            <Button size="large">About Me</Button>
+          </Space>
+          <Space>
+            <Button size="large">Login</Button>
+          </Space>
         </Space>
       </Space>
     </div>
