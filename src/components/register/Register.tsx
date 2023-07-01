@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 const { Title } = Typography;
 
-const Login = () => {
+const Register = () => {
   const [visible, setVisible] = useState(false);
 
   const onFinish = (values) => {
-    console.log("Login form values:", values);
-    // Handle login logic here
+    console.log("Register form values:", values);
+    // Handle register logic here
     setVisible(false);
   };
 
@@ -24,10 +24,10 @@ const Login = () => {
   return (
     <div>
       {/* <Button type="primary" onClick={showModal}>
-        Login
+        Register
       </Button>
       <Modal visible={visible} onCancel={handleCancel} footer={null}>
-        <Title level={2}>Login</Title>
+        <Title level={2}>Register</Title>
         <Form onFinish={onFinish}>
           <Form.Item
             label="Username"
@@ -45,20 +45,20 @@ const Login = () => {
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit">
-              Login
+              Register
             </Button>
           </Form.Item>
           <Form.Item>
-            Don't have an account?{" "}
-            <Link to="/register" onClick={handleCancel}>
-              Register here
+            Already have an account?{" "}
+            <Link to="/login" onClick={handleCancel}>
+              Login here
             </Link>
           </Form.Item>
         </Form>
       </Modal> */}
-      Login
+      Register
     </div>
   );
 };
 
-export default Login;
+export default Register;

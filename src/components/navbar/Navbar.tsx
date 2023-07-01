@@ -7,6 +7,7 @@ import {
   MailOutlined,
   MenuOutlined,
 } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -39,6 +40,7 @@ const Navbar: React.FC = () => {
 };
 
 const NavbarMenu = ({ isInline = false }) => {
+  let navigate = useNavigate();
   return (
     <div>
       <Space
@@ -56,10 +58,14 @@ const NavbarMenu = ({ isInline = false }) => {
           className="space-container-2"
         >
           <Space>
-            <Button size="large">About Me</Button>
+            <Button size="large" onClick={() => navigate("/aboutme")}>
+              About Me
+            </Button>
           </Space>
           <Space>
-            <Button size="large">Login</Button>
+            <Button size="large" onClick={() => navigate("/login")}>
+              Login
+            </Button>
           </Space>
         </Space>
       </Space>
