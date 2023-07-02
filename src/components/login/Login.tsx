@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Form, Input, Button, Typography, Modal } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const { Title } = Typography;
 
 const Login = () => {
-  const [visible, setVisible] = useState(false);
+  let navigate = useNavigate();
+  const [visible, setVisible] = useState(true);
 
   const onFinish = (values) => {
     console.log("Login form values:", values);
@@ -13,19 +14,20 @@ const Login = () => {
     setVisible(false);
   };
 
-  const showModal = () => {
-    setVisible(true);
-  };
+  // const showModal = () => {
+  //   setVisible(true);
+  // };
 
   const handleCancel = () => {
     setVisible(false);
+    navigate("/");
   };
 
   return (
     <div>
-      {/* <Button type="primary" onClick={showModal}>
+      {/* <Button size="large" type="primary" onClick={showModal}>
         Login
-      </Button>
+      </Button> */}
       <Modal visible={visible} onCancel={handleCancel} footer={null}>
         <Title level={2}>Login</Title>
         <Form onFinish={onFinish}>
@@ -55,8 +57,7 @@ const Login = () => {
             </Link>
           </Form.Item>
         </Form>
-      </Modal> */}
-      Login
+      </Modal>
     </div>
   );
 };

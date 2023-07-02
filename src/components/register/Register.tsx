@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Form, Input, Button, Typography, Modal } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const { Title } = Typography;
 
 const Register = () => {
-  const [visible, setVisible] = useState(false);
+  let navigate = useNavigate();
+  const [visible, setVisible] = useState(true);
 
   const onFinish = (values) => {
     console.log("Register form values:", values);
@@ -13,19 +14,20 @@ const Register = () => {
     setVisible(false);
   };
 
-  const showModal = () => {
-    setVisible(true);
-  };
+  // const showModal = () => {
+  //   setVisible(true);
+  // };
 
   const handleCancel = () => {
     setVisible(false);
+    navigate("/");
   };
 
   return (
     <div>
       {/* <Button type="primary" onClick={showModal}>
         Register
-      </Button>
+      </Button> */}
       <Modal visible={visible} onCancel={handleCancel} footer={null}>
         <Title level={2}>Register</Title>
         <Form onFinish={onFinish}>
@@ -36,13 +38,13 @@ const Register = () => {
           >
             <Input />
           </Form.Item>
-          <Form.Item
+          {/* <Form.Item
             label="Password"
             name="password"
             rules={[{ required: true, message: "Please enter your password!" }]}
           >
             <Input.Password />
-          </Form.Item>
+          </Form.Item> */}
           <Form.Item>
             <Button type="primary" htmlType="submit">
               Register
@@ -55,8 +57,7 @@ const Register = () => {
             </Link>
           </Form.Item>
         </Form>
-      </Modal> */}
-      Register
+      </Modal>
     </div>
   );
 };

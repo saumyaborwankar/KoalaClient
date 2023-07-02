@@ -8,6 +8,8 @@ import {
   MenuOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import Login from "../login/Login";
+import Register from "../register/Register";
 
 const Navbar: React.FC = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -66,6 +68,11 @@ const NavbarMenu = ({ isInline = false }) => {
             <Button size="large" onClick={() => navigate("/login")}>
               Login
             </Button>
+            <Button size="large" onClick={() => navigate("/register")}>
+              Register
+            </Button>
+            {/* <Login /> */}
+            {/* <Register /> */}
           </Space>
         </Space>
       </Space>
